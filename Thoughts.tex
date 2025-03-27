@@ -92,7 +92,7 @@
 
 	Let \(\Gamma\) be a cell diagram. 
 	Assume that every set \(J \in \mathcal{U}^\theta\) contains an edge of \(\Gamma\). 
-	Then \(P_\Gamma\) is an open subset of \(P^{\theta\text{-st}}\) and the image \(X_\Gamma\) of \(P_\Gamma\) under the quotient map \(P^{\theta\text{-st}} \to X\) is an open subset of \(X\) which is isomorphic to \(\mathbb{A}^{n-3}\).
+	Then \(P_\Gamma\) is an open subset of \(P^{\theta\text{-st}}\) and the image \(U_\Gamma\) of \(P_\Gamma\) under the quotient map \(P^{\theta\text{-st}} \to X\) is an open subset of \(X\) which is isomorphic to \(\mathbb{A}^{n-3}\).
 
 	\begin{claim}
 		Assume that \(\theta_i < \frac{1}{2}\) for all \(i \in I\). 
@@ -101,7 +101,9 @@
 
 	\subsection*{Closed subsets}
 
-	Let \(\mathcal{S}\) be partition of \(I\) and let \({\sim} = {\sim}_\mathcal{S}\) be the corresponding equivalence relation. We consider the space \(P^{I/\sim}\) of tuples of points on the projective line which are indexed by equivalence classes with respect to \(\sim\). This can be identified with the closed subset 
+	Let \(\mathcal{S}\) be partition of \(I\) and let \({\sim} = {\sim}_\mathcal{S}\) be the corresponding equivalence relation. 
+	We consider the space \(P^{I/\sim}\) of tuples of points on the projective line which are indexed by equivalence classes with respect to \(\sim\). 
+	This can be identified with the closed subset 
 	\[
 		P^\mathcal{S} = \{ p = (p_1,\ldots,p_n) \in P \mid p_i = p_j \text{ for all \(i\) and \(j\) such that } i \sim j \}. 
 	\]
@@ -109,4 +111,16 @@
 	\[
 		\tilde{\theta}_{[i]} = \sum_{j \sim i} \theta_j.
 	\]
+	The image \(Z^\mathcal{S}\) of \(P^\mathcal{S} \cap P^{\theta\text{-st}}\) under the quotient map \(P^{\theta\text{-st}} \to X\) is therefore isomorphic to the moduli space \(X^{I/\sim,\tilde{\theta}}\), a moduli space of \(m = \left|I/\sim\right|\) points.
+
+	\subsection*{Cells}
+
+	Let \(\Gamma\) be a cell graph on \(I\) such that \(\mathcal{U}_\Gamma\) contains \(\mathcal{U}^\theta\). Let \(\mathcal{S}\) be a partition of \(I\). We define \(P_{\Gamma}^\mathcal{S} = P_{\Gamma} \cap P^\mathcal{S}\) (note that this is already contained in \(P^{\theta\text{-st}}\)) and 
+	\[
+		C_\Gamma^\mathcal{S} = U_\Gamma \cap Z^\mathcal{S}.
+	\]
+
+	\begin{lem}
+		The set $C_\Gamma^\mathcal{S}$ is non-empty if and only if there is no edge \(\{i,j\}\) in \(\Gamma\) with \(i \sim_\mathcal{S} j\).
+	\end{lem}
 \end{document}
