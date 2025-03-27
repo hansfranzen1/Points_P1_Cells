@@ -55,17 +55,20 @@
 	Note that \(P_{\mathcal{U}}\) is non-empty if and only if every \(J \in \mathcal{U}\) has at least two elements. 
 	For two up-sets \(\mathcal{U}\) and \(\mathcal{V}\), we have \(P_{\mathcal{U}} \subseteq P_{\mathcal{V}}\) if and only if \(\mathcal{U} \supseteq \mathcal{V}\).
 
-	We define \(\mathcal{U}^\theta = \{J \subseteq I \mid \sum_{j \in J} \theta_j \geq \frac{1}{2} \}\). Then \(P^{\theta\text{-st}} = P_{\mathcal{U}^\theta}\).
+	We define \(\mathcal{U}^\theta = \{J \subseteq I \mid \sum_{j \in J} \theta_j \geq \frac{1}{2} \}\). 
+	Then \(P^{\theta\text{-st}} = P_{\mathcal{U}^\theta}\).
 
-	Now to the open subsets associated with graphs. Let \(\Gamma\) be a simply laced undirected graph with vertex set \(I\). 
-	We may regard \(\Gamma\) as a symmetric relation on \(I\) and write \((i,j) \in \Gamma\) whenever there is an edge between \(i\) and \(j\). We define the open subset 
+	Now to the open subsets associated with graphs. Let \(\Gamma\) be a simply laced undirected graph with vertex set \(I\) and with no loops.
+	We may regard \(\Gamma\) as a set of 2-element subsets and write \(\{i,j\} \in \Gamma\) whenever there is an edge between \(i\) and \(j\). 
+	We define the open subset 
 	\[
-		P_\Gamma = \{p \in P \mid p_i \neq p_j \text{ for all } (i,j) \in \Gamma \}.
+		P_\Gamma = \{p \in P \mid p_i \neq p_j \text{ for all } \{i,j\} \in \Gamma \}.
 	\]
-	It is equal to the set \(P_{\mathcal{U}_\Gamma}\), where \(\mathcal{U}_\Gamma\) is the up-set \(\{J \mid \text{exist } i,j \in J \text{ such that } (i,j) \in J\}\).
+	It is equal to the set \(P_{\mathcal{U}_\Gamma}\), where \(\mathcal{U}_\Gamma\) is the up-set \(\{J \mid \text{exist } i,j \in J \text{ such that } \{i,j\} \in J\}\), so the smallest up-set, which contains the set of edges of \(\Gamma\).
 
 	\begin{rem}
-		Let \(\Gamma\) be a simply laced undirected graph which contains a three-cycle. Without loss of generality, we assume that \(1\), \(2\), and \(3\) lie on a three-cycle. 
+		Let \(\Gamma\) be a simply laced undirected graph which contains a three-cycle. 
+		Without loss of generality, we assume that \(1\), \(2\), and \(3\) lie on a three-cycle. 
 		Then for any \(p \in P_\Gamma\), there exists a unique \(g \in \operatorname{PGL}_2\) such that the point configuration \(q = gp\) satisfies \(q_1 = [0:1]\), \(q_2 = [1:1]\) and \(q_3 = [1:0]\). 
 		There exists a geometric \(\operatorname{PGL}_2\)-quotient which is an open subset of \(\mathbb{P}^{n-3}\).
 	\end{rem}
@@ -77,4 +80,25 @@
 			\item[(C.2)] There is precisely one reduced cycle in \(\Gamma\), and it is a three-cycle. 
 		\end{enumerate}
 	\end{defn}
+
+	\begin{lem}
+		Let \(\Gamma\) be a cell graph. 
+		Then there exists a geometric \(\operatorname{PGL}_2\)-quotient \(P_{\Gamma} \to \mathbb{A}^3\).
+	\end{lem}
+
+	\begin{proof}
+		This should basically be the same chain fraction argument as you gave for the cell graph with edges 1--2--3--1--4--5--6--\ldots
+	\end{proof}
+
+	Let \(\Gamma\) be a cell diagram. 
+	Assume that every set \(J \in \mathcal{U}^\theta\) contains an edge of \(\Gamma\). 
+	Then \(P_\Gamma\) is an open subset of \(P^{\theta\text{-st}}\) and the image \(X_\Gamma\) of \(P_\Gamma\) under the quotient map \(P^{\theta\text{-st}} \to X\) is an open subset of \(X\) which is isomorphic to \(\mathbb{A}^{n-3}\).
+
+	\begin{claim}
+		Assume that \(\theta_i < \frac{1}{2}\) for all \(i \in I\). 
+		Then there exists a cell graph \(\Gamma\) such that every set \(J \subseteq I\) with \(\sum_{j \in J} \theta_j \geq \frac{1}{2}\) contains an edge of \(\Gamma\).
+	\end{claim}
+
+	\subsection*{Closed subsets}
+	
 \end{document}
