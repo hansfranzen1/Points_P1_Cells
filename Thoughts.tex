@@ -30,97 +30,109 @@
 %
 \begin{document}
 
-	\maketitle
-	
-	Fix a natural number \(n \geq 3\) and a tuple \(\theta = (\theta_1,\ldots,\theta_n)\) of rational numbers with \(\theta_i > 0\) and \(\sum_{i=1}^n \theta_i = 1\). 
-	We assume that there is no subset \(J \subseteq I := \{1,\ldots,n\}\) such that \(\sum_{j \in J} \theta_j = \frac{1}{2}\).
+\maketitle
 
-	Let \(P = P^I = {(\mathbb{P}^1)}^n\) be the space of configurations of \(n\) points. 
-	Such a configuration \(p = (p_1,\ldots,p_n) \in P\) is called \(\theta\)-\emph{stable}, if for all subsets \(J \subseteq \{1,\ldots,n\}\) with \(\sum_{j \in J} \theta_j \geq \frac{1}{2}\) holds that \(\{p_j \mid j \in J\}\) is not a singleton.
-	Let \(X = X^{I,\theta} = P^{\theta\text{-st}}/\operatorname{PGL}_2\). It is a geometric quotient and a smooth projective variety. 
-	It is non-empty if and only if all \(\theta_i < 0\).
+Fix a natural number \(n \geq 3\) and a tuple \(\theta = (\theta_1,\ldots,\theta_n)\) of rational numbers with \(\theta_i > 0\) and \(\sum_{i=1}^n \theta_i = 1\). 
 
-	\subsection*{Open subsets}
-	Let \(\mathcal{U}\) be a set of subsets of \(I\) with the following properties:
-	\begin{itemize}
-		\item \(\emptyset \notin \mathcal{U}\)
-		\item For all \(U \in \mathcal{U}\) and all \(J \sub I\) with \(U \subseteq J\) holds \(J \in \mathcal{U}\).
-	\end{itemize}
-	We call such a set an \emph{up-set}.
+\begin{ass*}
+	There is no subset \(J \subseteq I := \{1,\ldots,n\}\) such that \(\sum_{j \in J} \theta_j = \frac{1}{2}\).
+\end{ass*}
 
-	Define the open subset 
-	\[ 
-		P_\mathcal{U} = \{p \in P \mid \{p_j \mid j \in J\} \text{ is not a singleton for all } J \in \mathcal{U} \}.
-	\]
-	Note that \(P_{\mathcal{U}}\) is non-empty if and only if every \(J \in \mathcal{U}\) has at least two elements. 
-	For two up-sets \(\mathcal{U}\) and \(\mathcal{V}\), we have \(P_{\mathcal{U}} \subseteq P_{\mathcal{V}}\) if and only if \(\mathcal{U} \supseteq \mathcal{V}\).
+Let \(P = P^{(I)} = {(\mathbb{P}^1)}^n\) be the space of configurations of \(n\) points. 
+Such a configuration \(p = (p_1,\ldots,p_n) \in P\) is called \(\theta\)-\emph{stable}, if for all subsets \(J \subseteq \{1,\ldots,n\}\) with \(\sum_{j \in J} \theta_j \geq \frac{1}{2}\) holds that \(\{p_j \mid j \in J\}\) is not a singleton.
+Let 
+\[
+	X = X^{(I),\theta} = P^{\theta\text{-st}}/\operatorname{PGL}_2.
+\] 
+It is a geometric quotient and a smooth projective variety. 
+It is non-empty if and only if all \(\theta_i < \frac{1}{2}\).
 
-	We define \(\mathcal{U}^\theta = \{J \subseteq I \mid \sum_{j \in J} \theta_j \geq \frac{1}{2} \}\). 
-	Then \(P^{\theta\text{-st}} = P_{\mathcal{U}^\theta}\).
+\subsection*{Open subsets}
+Let \(\mathcal{U}\) be a set of subsets of \(I\) with the following properties:
+\begin{itemize}
+	\item \(\emptyset \notin \mathcal{U}\)
+	\item For all \(U \in \mathcal{U}\) and all \(J \sub I\) with \(U \subseteq J\) holds \(J \in \mathcal{U}\).
+\end{itemize}
+We call such a set an \emph{up-set}.
 
-	Now to the open subsets associated with graphs. Let \(\Gamma\) be a simply laced undirected graph with vertex set \(I\) and with no loops.
-	We may regard \(\Gamma\) as a set of 2-element subsets and write \(\{i,j\} \in \Gamma\) whenever there is an edge between \(i\) and \(j\). 
-	We define the open subset 
-	\[
-		P_\Gamma = \{p \in P \mid p_i \neq p_j \text{ for all } \{i,j\} \in \Gamma \}.
-	\]
-	It is equal to the set \(P_{\mathcal{U}_\Gamma}\), where \(\mathcal{U}_\Gamma\) is the up-set \(\{J \mid \text{exist } i,j \in J \text{ such that } \{i,j\} \in J\}\), so the smallest up-set, which contains the set of edges of \(\Gamma\).
+Define the open subset 
+\[ 
+	P_\mathcal{U} = \{p \in P \mid \{p_j \mid j \in J\} \text{ is not a singleton for all } J \in \mathcal{U} \}.
+\]
+Note that \(P_{\mathcal{U}}\) is non-empty if and only if every \(J \in \mathcal{U}\) has at least two elements. 
+For two up-sets \(\mathcal{U}\) and \(\mathcal{V}\), we have \(P_{\mathcal{U}} \subseteq P_{\mathcal{V}}\) if and only if \(\mathcal{U} \supseteq \mathcal{V}\).
 
-	\begin{rem}
-		Let \(\Gamma\) be a simply laced undirected graph which contains a three-cycle. 
-		Without loss of generality, we assume that \(1\), \(2\), and \(3\) lie on a three-cycle. 
-		Then for any \(p \in P_\Gamma\), there exists a unique \(g \in \operatorname{PGL}_2\) such that the point configuration \(q = gp\) satisfies \(q_1 = [0:1]\), \(q_2 = [1:1]\) and \(q_3 = [1:0]\). 
-		There exists a geometric \(\operatorname{PGL}_2\)-quotient which is an open subset of \(\mathbb{P}^{n-3}\).
-	\end{rem}
+We define \(\mathcal{U}^\theta = \{J \subseteq I \mid \sum_{j \in J} \theta_j \geq \frac{1}{2} \}\). 
+Then \(P^{\theta\text{-st}} = P_{\mathcal{U}^\theta}\).
 
-	\begin{defn}
-		A \emph{cell diagram} on the set \(I\) is a simply laced undirected graph \(\Gamma\) with vertex set \(I\) such that the following hold:
-		\begin{enumerate}
-			\item[(C.1)] \(\Gamma\) is connected.
-			\item[(C.2)] There is precisely one reduced cycle in \(\Gamma\), and it is a three-cycle. 
-		\end{enumerate}
-	\end{defn}
+Now to the open subsets associated with graphs. Let \(\Gamma\) be a simply laced undirected graph with vertex set \(I\) and with no loops.
+We may regard \(\Gamma\) as a set of 2-element subsets and write \(\{i,j\} \in \Gamma\) whenever there is an edge between \(i\) and \(j\). 
+We define the open subset 
+\[
+	P_\Gamma = \{p \in P \mid p_i \neq p_j \text{ for all } \{i,j\} \in \Gamma \}.
+\]
+It is equal to the set \(P_{\mathcal{U}_\Gamma}\), where \(\mathcal{U}_\Gamma\) is the up-set 
+\[
+	\{J \mid \text{exist } i,j \in J \text{ such that } \{i,j\} \in J\}
+\]
+so the smallest up-set, which contains the set of edges of \(\Gamma\).
 
-	\begin{lem}
-		Let \(\Gamma\) be a cell graph. 
-		Then there exists a geometric \(\operatorname{PGL}_2\)-quotient \(P_{\Gamma} \to \mathbb{A}^{n-3}\).
-	\end{lem}
+\begin{rem}
+	Let \(\Gamma\) be a simply laced undirected graph which contains a three-cycle. 
+	Without loss of generality, we assume that \(1\), \(2\), and \(3\) lie on a three-cycle. 
+	Then for any \(p \in P_\Gamma\), there exists a unique \(g \in \operatorname{PGL}_2\) such that the point configuration \(q = gp\) satisfies \(q_1 = [0:1]\), \(q_2 = [1:1]\) and \(q_3 = [1:0]\). 
+	There exists a geometric \(\operatorname{PGL}_2\)-quotient which is an open subset of \(\mathbb{P}^{n-3}\).
+\end{rem}
 
-	\begin{proof}
-		This should basically be the same chain fraction argument as you gave for the cell graph with edges 1--2--3--1--4--5--6--\ldots
-	\end{proof}
+\begin{defn}
+	A \emph{cell diagram} on the set \(I\) is a simply laced undirected graph \(\Gamma\) with vertex set \(I\) such that the following hold:
+	\begin{enumerate}
+		\item[(C.1)] \(\Gamma\) is connected.
+		\item[(C.2)] There is precisely one reduced cycle in \(\Gamma\), and it is a three-cycle. 
+	\end{enumerate}
+\end{defn}
 
-	Let \(\Gamma\) be a cell diagram. 
-	Assume that every set \(J \in \mathcal{U}^\theta\) contains an edge of \(\Gamma\). 
-	Then \(P_\Gamma\) is an open subset of \(P^{\theta\text{-st}}\) and the image \(U_\Gamma\) of \(P_\Gamma\) under the quotient map \(P^{\theta\text{-st}} \to X\) is an open subset of \(X\) which is isomorphic to \(\mathbb{A}^{n-3}\).
+\begin{lem}
+	Let \(\Gamma\) be a cell graph. 
+	Then there exists a geometric \(\operatorname{PGL}_2\)-quotient \(P_{\Gamma} \to \mathbb{A}^{n-3}\).
+\end{lem}
 
-	\begin{claim}
-		Assume that \(\theta_i < \frac{1}{2}\) for all \(i \in I\). 
-		Then there exists a cell graph \(\Gamma\) such that every set \(J \subseteq I\) with \(\sum_{j \in J} \theta_j \geq \frac{1}{2}\) contains an edge of \(\Gamma\).
-	\end{claim}
+\begin{proof}
+	This should basically be the same chain fraction argument as you gave for the cell graph with edges 1--2--3--1--4--5--6--\ldots
+\end{proof}
 
-	\subsection*{Closed subsets}
+Let \(\Gamma\) be a cell diagram. 
+Assume that every set \(J \in \mathcal{U}^\theta\) contains an edge of \(\Gamma\). 
+Then \(P_\Gamma\) is an open subset of \(P^{\theta\text{-st}}\) and the image \(U_\Gamma\) of \(P_\Gamma\) under the quotient map \(P^{\theta\text{-st}} \to X\) is an open subset of \(X\) which is isomorphic to \(\mathbb{A}^{n-3}\).
 
-	Let \(\mathcal{S}\) be partition of \(I\) and let \({\sim} = {\sim}_\mathcal{S}\) be the corresponding equivalence relation. 
-	We consider the space \(P^{I/\sim}\) of tuples of points on the projective line which are indexed by equivalence classes with respect to \(\sim\). 
-	This can be identified with the closed subset 
-	\[
-		P^\mathcal{S} = \{ p = (p_1,\ldots,p_n) \in P \mid p_i = p_j \text{ for all \(i\) and \(j\) such that } i \sim j \}. 
-	\]
-	The intersection \(P^\mathcal{S} \cap P^{\theta\text{-st}}\) then identifies with the stable locus \({(P^{I/\sim})}^{\tilde{\theta}\text{-st}}\), where \(\tilde{\theta}\) is the stability parameter defined by
-	\[
-		\tilde{\theta}_{[i]} = \sum_{j \sim i} \theta_j.
-	\]
-	The image \(Z^\mathcal{S}\) of \(P^\mathcal{S} \cap P^{\theta\text{-st}}\) under the quotient map \(P^{\theta\text{-st}} \to X\) is therefore isomorphic to the moduli space \(X^{I/\sim,\tilde{\theta}}\), a moduli space of \(m = \left|I/\sim\right|\) points.
+\begin{claim}
+	Assume that \(\theta_i < \frac{1}{2}\) for all \(i \in I\). 
+	Then there exists a cell graph \(\Gamma\) such that every set \(J \subseteq I\) with \(\sum_{j \in J} \theta_j \geq \frac{1}{2}\) contains an edge of \(\Gamma\).
+\end{claim}
 
-	\subsection*{Cells}
+\subsection*{Closed subsets}
 
-	Let \(\Gamma\) be a cell graph on \(I\) such that \(\mathcal{U}_\Gamma\) contains \(\mathcal{U}^\theta\). Let \(\mathcal{S}\) be a partition of \(I\). We define \(P_{\Gamma}^\mathcal{S} = P_{\Gamma} \cap P^\mathcal{S}\) (note that this is already contained in \(P^{\theta\text{-st}}\)) and 
-	\[
-		C_\Gamma^\mathcal{S} = U_\Gamma \cap Z^\mathcal{S}.
-	\]
+Let \(\mathcal{S}\) be partition of \(I\) and let \({\sim} = {\sim}_\mathcal{S}\) be the corresponding equivalence relation. 
+We consider the space \(P^{I/\sim}\) of tuples of points on the projective line which are indexed by equivalence classes with respect to \(\sim\). 
+This can be identified with the closed subset 
+\[
+	P^\mathcal{S} = \{ p = (p_1,\ldots,p_n) \in P \mid p_i = p_j \text{ for all \(i\) and \(j\) such that } i \sim j \}. 
+\]
+The intersection \(P^\mathcal{S} \cap P^{\theta\text{-st}}\) then identifies with the stable locus \({(P^{I/\sim})}^{\tilde{\theta}\text{-st}}\), where \(\tilde{\theta}\) is the stability parameter defined by
+\[
+	\tilde{\theta}_{[i]} = \sum_{j \sim i} \theta_j.
+\]
+The image \(Z^\mathcal{S}\) of \(P^\mathcal{S} \cap P^{\theta\text{-st}}\) under the quotient map \(P^{\theta\text{-st}} \to X\) is therefore isomorphic to the moduli space \(X^{I/\sim,\tilde{\theta}}\), a moduli space of \(m = \left|I/\sim\right|\) points.
 
-	\begin{lem}
-		The set $C_\Gamma^\mathcal{S}$ is non-empty if and only if there is no edge \(\{i,j\}\) in \(\Gamma\) with \(i \sim_\mathcal{S} j\).
-	\end{lem}
+\subsection*{Cells}
+
+Let \(\Gamma\) be a cell graph on \(I\) such that \(\mathcal{U}_\Gamma\) contains \(\mathcal{U}^\theta\). Let \(\mathcal{S}\) be a partition of \(I\). We define \(P_{\Gamma}^\mathcal{S} = P_{\Gamma} \cap P^\mathcal{S}\) (note that this is already contained in \(P^{\theta\text{-st}}\)) and 
+\[
+	C_\Gamma^\mathcal{S} = U_\Gamma \cap Z^\mathcal{S}.
+\]
+
+\begin{lem}
+	The set $C_\Gamma^\mathcal{S}$ is non-empty if and only if there is no edge \(\{i,j\}\) in \(\Gamma\) with \(i \sim_\mathcal{S} j\).
+\end{lem}
+
 \end{document}
